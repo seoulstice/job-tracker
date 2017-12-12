@@ -11,3 +11,4 @@ City: <%= @job.city %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+<%= link_to 'Destroy',  company_job_path(@job.company, @job), data: { confirm: 'Are you sure?' }, method: :delete %>
