@@ -5,31 +5,31 @@ The rubric below describes additional functionality that you will need to add to
 ### Jobs
 
 [ ] A user can update a job  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] A user can delete a job  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 
 ### Categories  
 
 [ ] The user can create a new Category by filling out a form. Each Category has a title (e.g. “Web Development”,   “Education”, “Finance”).  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] When the user successfully creates a Category they are shown a page with the Category title.  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] When the user tries to create a Category that already exists, they are brought back to the page with the form to create a Category.  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] The user can view a list of all Categories on a single page, and each Category can be deleted from that page. There is also a link to “Edit” each Category, which takes the user to a form where they can update the Category.  

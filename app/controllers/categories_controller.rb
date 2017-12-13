@@ -32,8 +32,14 @@ class CategoriesController < ApplicationController
     # @category.update(category_params)
     # if @company.save
     #   flash[:success] = "#{@category.title} updated!"
+  end
 
+  def destroy
+    @category.destroy
 
+    flash[:success] = "#{@category.title} was deleted!"
+
+    redirect_to categories_path
   end
 
 
