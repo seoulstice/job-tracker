@@ -29,9 +29,13 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    # @category.update(category_params)
-    # if @company.save
-    #   flash[:success] = "#{@category.title} updated!"
+    @category.update(category_params)
+    if @category.save
+      flash[:success] = "#{@category.title} Updated!"
+      redirect_to categories_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -41,8 +45,6 @@ class CategoriesController < ApplicationController
 
     redirect_to categories_path
   end
-
-
 
   private
 
