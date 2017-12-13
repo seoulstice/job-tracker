@@ -1,1 +1,4 @@
 <%= @category.title %>
+<% @category.jobs.each do |job| %>
+  <%= job.title %>
+<% end %>
