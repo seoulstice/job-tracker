@@ -43,31 +43,31 @@ The rubric below describes additional functionality that you will need to add to
   [ ] tested  
 
 [ ] When the user visits a page for a specific Category, they see a list of Jobs in that Category.  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 
 ### Comments  
 
 [ ] When the user visits the page for a specific Job, in addition to information about the job there is a form that allows them to enter a Comment for that Job (e.g. “Spoke to hiring manager, Jacob. Plan to follow up Monday.”).  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] Each comment has content (also created_at and updated_at).  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] When the user submits a new comment, they are redirected back to the page for that specific job and the comment appears on the page.  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 [ ] The user can leave multiple comments on a job and the most recent comments are shown above older comments (in reverse of the order in which they were created).  
-  [ ] controller  
-  [ ] view  
+  [x] controller  
+  [x] view  
   [ ] tested  
 
 

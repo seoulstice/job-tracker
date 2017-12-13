@@ -1,5 +1,8 @@
-<p>
-  <%= comment.author %>
-  <%= comment.body %>
-  <%= comment.created_at %>
-</p>
+<% @job.comments.reverse.each do |comment| %>
+<ul>
+  <li>Commenter: <%= comment.author %></li>
+  <li>Comment: <%= comment.body %></li>
+  <li>Created: <%= comment.created_at %></li>
+  <li>Updated: <%= comment.updated_at %></li>
+</ul>
+<% end %>
