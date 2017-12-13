@@ -9,22 +9,25 @@ class JobsController < ApplicationController
   def new
     @company = Company.find(params[:company_id])
     @job = Job.new()
+    @categories = Category.all
   end
 
   def create
     @company = Company.find(params[:company_id])
     @job = @company.jobs.new(job_params)
+    # binding.pry
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
-      redirect_to company_job_path(@company, @job)
+      redirect_to company_jobs_path(@company)
     else
-      flash[:failure] = "You created #{@job.title} at #{@company.name}"
+      flash[:failure] = "Failure"
       render :new
     end
   end
 
   def show
     @job = Job.find(params[:id])
+    @comment = @job.comments.new
 
     # @job = Job.find(params[:id])
   end
@@ -44,7 +47,6 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
 
-    # job = Job.find(params[:id])
     @company = @job.company
     @job.destroy
 
@@ -56,7 +58,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
   end
 
   # def set_job

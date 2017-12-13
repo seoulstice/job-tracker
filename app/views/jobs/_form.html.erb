@@ -1,7 +1,7 @@
 <%= form_for [@company, @job] do |f| %>
 
   <%= f.label :category %>
-  <%= f.collection_select :category, Category.all, :id, :title %>
+  <%= f.collection_select :category_id, Category.all, :id, :title %>
   <%= link_to "Create New Category", new_category_path %>
 
   <%= f.label :title %>
