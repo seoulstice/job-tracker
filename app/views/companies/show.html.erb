@@ -1,8 +1,16 @@
-All Jobs for <strong><%= @company.name %></strong>
-
-<% @company.jobs.each do |job| %>
-  <ul><%= link_to job.title, company_job_path(@company, job) %></ul>
-<% end %>
-
-<%= render partial: "contacts/contacts" %>
-<%= render partial: "contacts/form" %>
+<div class="">
+  <section>
+    All Jobs for <strong><%= @company.name %></strong>
+  </section>
+  <section>
+    <% @company.jobs.each do |job| %>
+      <ul><%= link_to job.title, company_job_path(@company, job) %></ul>
+    <% end %>
+  </section>
+  <section>
+    <%= render partial: "contacts/contacts" %>
+  </section>
+  <section>
+    <%= render partial: "contacts/form" %>  
+  </section>
+</div>

@@ -1,4 +1,10 @@
-<h2><%= @category.title %></h2><br/>
-<% @category.jobs.each do |job| %>
-  <p><%= job.title %> at <%= job.company.name %> <br/>
-<% end %>
+<div class="">
+  <section>
+    <h2><%= @category.title %></h2><br/>
+  </section>
+  <section>
+    <% @category.jobs.each do |job| %>
+    <p><%= job.title %> at <%= job.company.name %> <br/>
+      <% end %>
+  </section>
+</div>
