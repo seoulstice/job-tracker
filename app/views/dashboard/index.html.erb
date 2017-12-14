@@ -1,0 +1,13 @@
+<div class="">
+  <section class="header">
+    <h1>Dashboard</h1>
+  </section>
+  <section class="">
+    <h3>Jobs by Level of Interest</h3>
+    <ul>
+      <% @jobs.jobs_by_level_of_interest.reverse_each do |level, count| %>
+      <li>Level of Interest: <%= level %> - <%= count %> jobs</li>
+      <% end %>
+    </ul>
+  </section>
+</div>
