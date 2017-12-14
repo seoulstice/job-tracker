@@ -1,9 +1,11 @@
 class JobsController < ApplicationController
-  # before_action :set_job, only: [:show, :destroy, :edit, :update]
+  before_action :set_job, only: [:show, :destroy, :edit, :update]
 
   def index
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
+    # if params[:company_id]
+    binding.pry
+      @company = Company.find(params[:company_id])
+      @jobs = @company.jobs
   end
 
   def new
@@ -15,7 +17,6 @@ class JobsController < ApplicationController
   def create
     @company = Company.find(params[:company_id])
     @job = @company.jobs.new(job_params)
-    # binding.pry
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
       redirect_to company_jobs_path(@company)
@@ -26,27 +27,23 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:id])
     @comment = @job.comments.new
-
-    # @job = Job.find(params[:id])
+    @comments = @job.comments.map do |comment|
+      comment if comment.id != nil
+    end.compact.reverse
   end
 
   def edit
-    @job = Job.find(params[:id])
     @company = Company.find(params[:company_id])
   end
 
   def update
-    @job = Job.find(params[:id])
     @job.update(job_params)
     flash[:success] = "Job #{@job.title} Updated!"
     redirect_to company_job_path(@job.company, @job)
   end
 
   def destroy
-    @job = Job.find(params[:id])
-
     @company = @job.company
     @job.destroy
 
@@ -55,13 +52,17 @@ class JobsController < ApplicationController
     redirect_to company_jobs_path(@company)
   end
 
+  def sort
+    @jobs = Job.where(city: params[:sort])
+  end
+
   private
 
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
   end
 
-  # def set_job
-  #   @job = Job.find(params[:id])
-  # end
+  def set_job
+    @job = Job.find(params[:id])
+  end
 end

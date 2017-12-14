@@ -1,9 +1,12 @@
-<%= form_for [@job, @comment] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+<%= form_for [@company, @contact] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
 
   <%= f.submit %>
 <% end %>

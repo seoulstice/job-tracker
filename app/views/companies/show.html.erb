@@ -3,3 +3,14 @@ All Jobs for <strong><%= @company.name %></strong>
 <% @company.jobs.each do |job| %>
   <ul><%= link_to job.title, company_job_path(@company, job) %></ul>
 <% end %>
+
+<% @company.contacts.each do |contact| %>
+  <ul>
+    <li><%= contact.name %></li>
+    <li><%= contact.position %></li>
+    <li><%= contact.email %></li>
+  </ul>
+<% end %>
+
+<%= render partial: "contacts/contacts" %>
+<%= render partial: "contacts/form" %>
